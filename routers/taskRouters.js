@@ -13,5 +13,8 @@ taskRouter.post('/edit_task/:id',taskCtl.edittaskPage);
 
 taskRouter.get('/edit_task/:id',taskCtl.edittask);
 
+taskRouter.get('/login',taskCtl.loginPage);
+taskRouter.post('/login',taskCtl.login);
+
 
 module.exports = taskRouter;

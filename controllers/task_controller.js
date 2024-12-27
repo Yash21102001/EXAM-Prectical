@@ -71,6 +71,10 @@ module.exports.edittaskPage = async (req, res) => {
 }
 
 
+module.exports.loginPage = (req, res) => {
+    return res.render('./pages/login');
+}
+
 module.exports.login = async (req, res) => {
     try {
         let { username, password } = req.body;
