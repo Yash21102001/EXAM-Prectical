@@ -6,17 +6,9 @@ module.exports.homePage = (req, res) => {
     return res.render('index');
 }
 
-// module.exports.addProductPage = async(req,res)=>{
-//     try {
-//         let Category = await category.find({});
-//         let Subcategory = await subCategory.find({});
-//         res.render('./pages/add_product',{
-//             Category,subCategory
-//         })
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
+module.exports.addtaskPage = async(req,res)=>{
+    return res.render('./pages/add_task');
+}
 
 module.exports.add_task = async (req, res) => {
     try {
@@ -75,5 +67,34 @@ module.exports.edittaskPage = async (req, res) => {
     } catch (error) {
         console.log(error);
         return res.redirect(req.get('Referrer' || '/'))
+    }
+}
+
+
+module.exports.login = async (req, res) => {
+    try {
+        let { username, password } = req.body;
+        let user = await User.findOne({ username })
+        
+        if(user)
+        {
+            if(user.password == password)
+            {   
+                res.cookie('userId',user.id);
+                return res.redirect('/');
+            }
+            else
+            {
+                return res.redirect('back');
+            }
+        }
+        else
+        {
+            return res.redirect('back');
+        }
+
+    } catch (error) {
+        console.log(error);
+        res.redirect('back')
     }
 }

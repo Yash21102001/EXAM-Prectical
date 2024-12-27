@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express();
 const {db} = require('./config/database') 
+const cookieParser = require('cookie-parser');
+
 const path = require('path');
 
 
@@ -8,6 +10,8 @@ const path = require('path');
 const port = 8081;
 
 app.set('view engine', 'ejs');
+app.use(cookieParser());
+
 
 app.use(express.static(path.join(__dirname + '/assets')));
 app.use('/uploads', express.static(path.join(__dirname + '/uploads')))

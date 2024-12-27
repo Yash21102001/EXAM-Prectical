@@ -39,26 +39,23 @@
                 <table class="table">
                   <thead>
                     <tr>
-                      <th scope="col">Image</th>
-                      <th scope="col">Title</th>
-                      <th scope="col">Price</th>
+                      <th scope="col">Task Title</th>
+                      <th scope="col">Description</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <% 
-                      data.map((product,index) => { 
-                      let {image,productTitle,productPrice,id} = product;
+                      data.map((task,index) => { 
+                      let {title,description,id} = task;
                     %>
                         <tr>
+                        
+                          <td><%= title %></td>
+                          <td><%= description %></td>
                           <td>
-                          <img class="rounded-circle" src="<%= image %>" alt="<%= productTitle %>" width="75px" height="75px" />
-                        </td>
-                          <td><%= productTitle %></td>
-                          <td><%= productPrice %></td>
-                          <td>
-                            <a href="/deleteProduct/<%= id %>">Delete</a>
-                            <a href="/edit_product/<%= id %>">Edit</a>
+                            <a href="/deletetask/<%= id %>">Delete</a>
+                            <a href="/edit_task/<%= id %>">Edit</a>
                           </td>
                         </tr>
                    <% }) %>
