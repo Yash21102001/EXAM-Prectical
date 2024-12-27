@@ -1,0 +1,135 @@
+<%- include('../partials/header') %>
+<div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+          <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+              <h4 class="page-title">Add Task </h4>
+              <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      add Task
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        
+
+
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+          <!-- ============================================================== -->
+          <!-- Start Page Content -->
+          <!-- ============================================================== -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <form class="form-horizontal" action="" method="post"  enctype="multipart/form-data">
+                  <div class="card-body">
+                    <h4 class="card-title">Edit's Info</h4>
+                    <div class="form-group row">
+                      <label
+                        for="title"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >Title</label
+                      >
+                      <div class="col-sm-9 ">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="title"
+                          name="title"
+                          placeholder="Title Here"
+                          value="<%= productData.title %>"
+                        />
+                        <input type="hidden" name="" value="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label
+                        for="content"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >Price</label
+                      >
+                      <div class="col-sm-9">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="title"
+                          name="price"
+                          placeholder="Price Here"
+                          value="<%= productData.price %>"
+                        />
+                        <input type="hidden" name="oldImage" value="<%= productData.image %>">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label
+                        for="content"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >Description</label
+                      >
+                      <div class="col-sm-9">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="title"
+                          name="description"
+                          placeholder="description Here"
+                          value="<%= productData.description %>"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label
+                        for="author"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >Image</label
+                      >
+                      <div class="col-sm-9">
+                        <input
+                        type="file"
+                        class="form-control mb-3"
+                        id="title"
+                        name="image"
+                      />
+                      <img src="../<%= productData.image %>" alt="<%= productData.name %>" width="100%">
+
+                      </div>
+                    </div>
+                  <div class="border-top">
+                    <div class="card-body">
+                      <button type="submit" class="btn btn-primary">
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+          </div>
+          <!-- ============================================================== -->
+          <!-- End PAge Content -->
+          <!-- ============================================================== -->
+          <!-- ============================================================== -->
+          <!-- Right sidebar -->
+          <!-- ============================================================== -->
+          <!-- .right-sidebar -->
+          <!-- ============================================================== -->
+          <!-- End Right sidebar -->
+          <!-- ============================================================== -->
+        </div>
+<%- include('../partials/footer') %>
